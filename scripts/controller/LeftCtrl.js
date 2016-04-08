@@ -5,6 +5,4 @@ angular.module('app').controller('LeftCtrl', function($scope, $timeout, $mdSiden
 				$log.debug("close LEFT is done");
 			});
 	};
-
-
 });

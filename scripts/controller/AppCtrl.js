@@ -1,7 +1,7 @@
 angular.module('app')
 	.controller('AppCtrl', ['$scope', '$interval', '$timeout', '$mdSidenav', '$log', function($scope, $interval, $timeout, $mdSidenav, $log) {
-		this.searchValue ='';
 
+		this.searchValue = '';
 		$scope.toggleRight = buildToggler('left');
 		$scope.isOpenRight = function() {
 			return $mdSidenav('left').isOpen();

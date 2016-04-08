@@ -10,8 +10,7 @@ var app = angular.module(
 		function($routeProvider) {
 			$routeProvider.when(
 				'/', {
-					templateUrl: './view/home/home.html'
-
+					templateUrl: './view/home/content.html'
 				}
 			);
 			$routeProvider.otherwise({

@@ -2,7 +2,7 @@
 <html ng-app="app">
 <head>
     <title>Awesome Film</title>
-
+    <meta name="name" content="content" charset="utf-8">
     <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
 
@@ -24,6 +24,69 @@
 </head>
 <body>
 <div class="page-container">
+    <div ng-controller="AppCtrl as vm" ng-cloak>
+        <md-content>
+            <md-toolbar class="">
+                <div class="md-toolbar-tools">
+                    <md-button class="md-icon-button" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()" ng-hide="isOpenRight()">
+                        <md-icon md-svg-icon="img/icons/home.svg"></md-icon>
+                    </md-button>
+                    <h2>
+                        <span>MDB电影</span>
+                    </h2>
+
+                    <form ng-submit="$event.preventDefault()">
+                        <md-autocomplete
+                            ng-disabled="ctrl.isDisabled"
+                            md-no-cache="ctrl.noCache"
+                            md-selected-item="ctrl.selectedItem"
+                            md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+                            md-search-text="ctrl.searchText"
+                            md-selected-item-change="ctrl.selectedItemChange(item)"
+                            md-items="item in ctrl.querySearch(ctrl.searchText)"
+                            md-item-text="item.name"
+                            md-min-length="0"
+                            placeholder="search"
+                            md-menu-class="autocomplete-custom-template"
+                            aria-label="search">
+                            <md-icon md-svg-src="img/icons/home.svg" class="name" aria-label="search"></md-icon>
+                        </md-autocomplete>
+                    </form>
+                    <span flex></span>
+                    <md-button class="md-fab md-mini" aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More">
+                        <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
+            <md-progress-linear class="md-warn" md-mode="buffer" value="{{vm.determinateValue}}" md-buffer-value="{{vm.determinateValue2}}" ng-show="vm.showList[0]"></md-progress-linear>
+        </md-content>
+        <div class="" layout="row">
+            <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+                <md-button class="avatarBtn">
+                    <md-icon md-svg-icon="img/icons/avatar-1.svg" class="avatar"></md-icon>
+                </md-button>
+                <p style="text-align: center; margin-top: -10px;">
+                    TopGrd
+                </p>
+
+                <md-content ng-controller="LeftCtrl" layout-padding>
+                    <form>
+                        <md-input-container>
+                            <label for="testInput">Test input</label>
+                            <input type="text" id="testInput" ng-model="data" md-autofocus>
+                        </md-input-container>
+                    </form>
+                    <md-button ng-click="close()" class="md-primary">
+                        Close Sidenav Right
+                    </md-button>
+                </md-content>
+            </md-sidenav>
+        </div>
+    </div>
+
     <ng-view class="page">
         <h1>Loading...</h1>
     </ng-view>

@@ -28,7 +28,7 @@ app.on('ready', function() {
 		height: 800,
 		fullscreen: false,
 		autoHideMenuBar: true,
-		frame: true
+		frame: false
 	});
 
 	// and load the index.html of the app.
