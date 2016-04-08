@@ -1,0 +1,31 @@
+.avatarBtn {
+    width: 95%;
+    text-align: left !important;
+    height: 70px;
+    ;
+}
+md-icon.avatar {
+    margin-right: 20px;
+}
+md-list .md-button.selected {
+    color: #03a9f4;
+}
+button#main {
+    margin-bottom: 10px;
+}
+md-sidenav > md-toolbar {
+    height: 64px;
+}
+.avatar {
+  position:relative;
+  width: 54px;
+  height: 54px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0px;
+  vertical-align: middle;
+  left: 50%;
+  margin-left: -27px;
+}
