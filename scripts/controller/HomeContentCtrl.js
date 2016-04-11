@@ -1,8 +1,20 @@
 angular.module('app')
-.controller('HomeContentCtrl', ['$scope', '$q', function($scope, $q) {
+.controller('HomeContentCtrl', ['$scope', '$q', '$interval', function($scope, $q, $interval) {
 	var request = require('request');
 	//var path = require('path');
 	//var fs = require('fs');
+
+	var self = this;
+	self.activated = true;
+	self.determinateValue = 30;
+	// Iterate every 100ms, non-stop and increment
+	// the Determinate loader.
+	$interval(function() {
+		self.determinateValue += 1;
+		if (self.determinateValue > 100) {
+			self.determinateValue = 30;
+		}
+	}, 100);
 
 	var deferred = $q.defer();
 	var options = {
@@ -23,6 +35,7 @@ angular.module('app')
 	}
 
 	getData(options).then(function (data) {
+		self.activated = false;
 		$scope.items = data;
 		console.log($scope.items);
 	});

@@ -27,7 +27,7 @@ app.on('ready', function() {
 		width: 1200,
 		height: 800,
 		fullscreen: false,
-		autoHideMenuBar: true,
+		autoHideMenuBar: false,
 		frame: false
 	});
 
@@ -36,7 +36,7 @@ app.on('ready', function() {
 	//mainWindow.loadUrl('https://movie.douban.com');
 
 	// Open the DevTools.
-	//mainWindow.openDevTools(false);
+	mainWindow.openDevTools();
 	// Emitted when the window is closed.
 	mainWindow.on('closed', function() {
 		// Dereference the window object, usually you would store windows

@@ -1,4 +1,5 @@
-<div class=""  ng-controller="HomeContentCtrl">
+<div class=""  ng-controller="HomeContentCtrl as hc">
+    <md-progress-circular md-mode="indeterminate" ng-show="hc.activated"></md-progress-circular>
     <ul >
         <list ng-repeat="item in items">
             <img src="{{item.images.medium}}" alt="" />

@@ -5,7 +5,8 @@
   "main": "main.js",
   "scripts": {
     "build": "gulp",
-    "start": "gulp && electron main.js"
+    "run": "gulp && electron main.js",
+    "start": "electron main.js"
   },
   "repository": {
     "type": "git",

@@ -29,3 +29,26 @@ md-sidenav > md-toolbar {
   left: 50%;
   margin-left: -27px;
 }
+
+.nav-button {
+    width: 24px!important;
+    height: 24px!important;
+}
+.navgi {
+    background: #3A88F7!important;
+}
+.search-box {
+    border-radius: 2px;
+    display: block;
+    height: 40px;
+    position: relative;
+    overflow: visible;
+    min-width: 20em;
+    border: none;
+    outline: 0;
+    background: #5999F9;
+    color: #fff;
+}
+::-webkit-input-placeholder {
+    color: #fff!important;
+}
