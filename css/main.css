@@ -31,16 +31,18 @@ md-sidenav > md-toolbar {
 }
 
 .nav-button {
+    margin-top: -12px!important;
     width: 24px!important;
     height: 24px!important;
 }
 .navgi {
     background: #3A88F7!important;
+    position: fixed;
 }
 .search-box {
     border-radius: 2px;
     display: block;
-    height: 40px;
+    height: 35px;
     position: relative;
     overflow: visible;
     min-width: 20em;
@@ -49,6 +51,62 @@ md-sidenav > md-toolbar {
     background: #5999F9;
     color: #fff;
 }
-::-webkit-input-placeholder {
-    color: #fff!important;
+.search-icon {
+    background: #5999F9;
+    width: 28px;
+    height: 28px;
+    margin-top: 6px;
+    margin-left: 1.8em;
+}
+.search-box::-webkit-input-placeholder {
+    color: #fff;
+    margin-left: 1em;
+}
+.search-icon>#text-field-container {
+    margin-left: 1.5em;
+}
+.contain-icon {
+    width: 70px;
+    height: 37px;
+    background: #5999F9;
+}
+.main-toolbar {
+    width: 100%;
+    height: 65px;
+}
+body {
+    overflow: hidden;
+}
+
+
+#wrapper {
+	position: absolute;
+	z-index: 1;
+	top: 70px;
+	bottom: 48px;
+	left: 0;
+	width: 100%;
+	background: #ccc;
+	overflow: hidden;
+}
+#scroller {
+	position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
 }
