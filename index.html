@@ -10,6 +10,7 @@
         <script src="node_modules/angular-aria/angular-aria.min.js"></script>
         <script src="node_modules/angular-material/angular-material.min.js"></script>
         <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
+        <link rel="stylesheet" href="https://raw.githubusercontent.com/premasagar/cleanslate/master/cleanslate.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="css/main.css" charset="utf-8">
         <!-- @if NODE_ENV='development' -->
 
@@ -32,10 +33,14 @@
                 <md-content>
                     <md-toolbar class="navgi">
                         <div class="md-toolbar-tools">
-                            <md-button class="md-fab" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()">
-                                <md-icon md-svg-icon="img/icons/avatar-1.svg" class="avatar"></md-icon>
-                            </md-button>
-                            <span>Moive
+                        <!--    <md-button class="md-fab" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()">
+                                <md-icon md-svg-icon="img/a0.png" class="avatar"></md-icon>
+                            </md-button> -->
+                            <div class="avatar" ng-click="toggleRight()">
+                                <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
+                            </div>
+                            <span flex="5"></span>
+                            <span>Movie
                             </span>
                             <span flex></span>
                             <div class="contain-icon">
