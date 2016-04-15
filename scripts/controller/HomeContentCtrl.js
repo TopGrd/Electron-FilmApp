@@ -18,7 +18,7 @@ angular.module('app')
 
 		var deferred = $q.defer();
 		var options = {
-			url: 'https://api.douban.com/v2/movie/in_theaters?count=40',
+			url: 'https://api.douban.com/v2/movie/in_theaters?count=50',
 			headers: {
 				'User-agent': 'request'
 			}
@@ -38,8 +38,9 @@ angular.module('app')
 		getData(options)
 			.then(function(data) {
 				self.activated = false;
-				$scope.items = data;
-				console.log($scope.items);
+				$scope.allItems = data;
+				$scope.items = data.slice(0, 5);
+				console.log($scope.allItems);
 			}).then(function() {
 				onCompletion();
 			});
