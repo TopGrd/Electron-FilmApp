@@ -35,7 +35,7 @@
                 <md-content>
                     <md-toolbar class="navgi">
                         <div class="md-toolbar-tools">
-                        <!--    <md-button class="md-fab" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()">
+                            <!--    <md-button class="md-fab" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()">
                                 <md-icon md-svg-icon="img/a0.png" class="avatar"></md-icon>
                             </md-button> -->
                             <div class="avatar" ng-click="toggleRight()">
@@ -45,6 +45,13 @@
                             <span>Movie
                             </span>
                             <span flex></span>
+                            <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.go(-1)">
+                                <md-icon md-svg-src="img/icons/back.svg"></md-icon>
+                            </md-button>
+                            <md-button class="md-fab md-mini" aria-label="next" onClick="javascript:history.go(1)">
+                                <md-icon md-svg-src="img/icons/next.svg"></md-icon>
+                            </md-button>
+                            <span flex="5"></span>
                             <div class="contain-icon">
                                 <md-icon md-svg-src="img/icons/search.svg" class="search-icon"></md-icon>
                             </div>
@@ -93,21 +100,21 @@
                 </ng-view>
             </div>
         </div>
-    <script type="text/javascript">
-    var myScroll;
-    function loaded() {
-        myScroll = new IScroll('#wrapper', {
-            scrollbars: true,
-            mouseWheel: true,
-            interactiveScrollbars: true,
-            shrinkScrollbars: 'scale',
-            fadeScrollbars: false
-        });
-    }
+        <script type="text/javascript">
+            var myScroll;
+            function loaded() {
+                myScroll = new IScroll('#wrapper', {
+                    scrollbars: true,
+                    mouseWheel: true,
+                    interactiveScrollbars: true,
+                    shrinkScrollbars: 'scale',
+                    fadeScrollbars: false
+                });
+            }
 
-    document.addEventListener('touchmove', function(e) {
-        e.preventDefault();
-    }, false);
-    </script>
+            document.addEventListener('touchmove', function(e) {
+                e.preventDefault();
+            }, false);
+        </script>
     </body>
 </html>
