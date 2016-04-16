@@ -16,7 +16,7 @@ var app = angular.module(
 			$routeProvider.when(
 				'/allItems', {
 					templateUrl: './view/home/allItems.html',
-					controller: 'AppCtrl'
+					controller: 'AllItemsCtrl'
 				}
 			)
 			$routeProvider.otherwise({

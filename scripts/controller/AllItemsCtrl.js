@@ -1,6 +1,6 @@
 angular.module('app')
-	.controller('HomeContentCtrl', ['DataService', '$scope', '$q', '$interval', function(DataService, $scope, $q, $interval) {
-		var self = this;
+	.controller('AllItemsCtrl', ['DataService', '$scope', '$q', '$interval', function(DataService, $scope, $q, $interval) {
+        var self = this;
 		self.activated = true;
 		self.determinateValue = 30;
 		// Iterate every 100ms, non-stop and increment
@@ -12,7 +12,7 @@ angular.module('app')
 			}
 		}, 100);
 
-		var options = {
+        var options = {
 			url: 'https://api.douban.com/v2/movie/in_theaters?count=50',
 			headers: {
 				'User-agent': 'request'
@@ -23,7 +23,6 @@ angular.module('app')
 			.then(function(data) {
 				self.activated = false;
 				$scope.allItems = data;
-				$scope.items = data.slice(0, 5);
 				console.log($scope.allItems);
 			})
 			.then(function() {
@@ -37,5 +36,4 @@ angular.module('app')
 				myScroll.refresh();
 			}, 200);
 		}
-
 	}]);

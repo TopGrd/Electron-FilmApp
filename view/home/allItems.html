@@ -1,3 +1,19 @@
-<h2>
-allItems {{allItems}}
-</h2>
+<div class="main-page" ng-controller="AllItemsCtrl as ac" ng-cloak>
+    <div layout="row" layout-sm="column" layout-align="center center" ng-show="ac.activated" class="main-page">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
+    <h2>
+        全部热映
+    </h2>
+    <div  class="">
+        <ul layout="row" layout-wrap>
+            <li ng-repeat="item in allItems" flex="20">
+                <div class="item">
+                    <div class="pro-it">
+                        <img src="{{item.images.large}}" alt="" />
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
