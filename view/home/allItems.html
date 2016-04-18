@@ -8,8 +8,13 @@
     <div  class="">
         <ul layout="row" layout-wrap>
             <li ng-repeat="item in allItems" flex="20">
-                <div class="item">
+                <div class="item" ng-mouseover="renderRating(item)">
                     <div class="pro-it">
+                        <div class="item-overlay opacity">
+                            <div class="rate-info padder">
+                            </div>
+                            {{item.rating.average/2}}
+                        </div>
                         <img src="{{item.images.large}}" alt="" />
                     </div>
                 </div>
