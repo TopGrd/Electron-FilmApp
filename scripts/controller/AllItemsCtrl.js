@@ -1,5 +1,5 @@
 angular.module('app')
-	.controller('AllItemsCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon',function(DataService, $scope, $q, $interval, $mdIcon) {
+	.controller('AllItemsCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', function(DataService, $scope, $q, $interval, $mdIcon) {
 		var self = this;
 		self.activated = true;
 		self.determinateValue = 30;
@@ -23,8 +23,6 @@ angular.module('app')
 			.then(function(data) {
 				self.activated = false;
 				$scope.allItems = data;
-				console.log($scope.allItems);
-				console.log($mdIcon);
 			})
 			.then(function() {
 				onCompletion();
@@ -38,23 +36,36 @@ angular.module('app')
 			}, 200);
 		}
 
-		$scope.renderRating = function (item) {
-			if (item.render === undefined) {
+		$scope.renderRating = function(item) {
+			if (item.render === undefined&&item.render !== true) {
 				var renderTarget = event.currentTarget.children[0].children[0].children[0];
-				var rate = (item.rating.average)/2;
+				var rate = Math.round((item.rating.average) / 2);
 				var urls = [
 					'img/icons/star.svg',
 					'img/icons/half-star.svg',
 					'img/icons/star_border.svg'
 				];
-				for (var i = 1; i < rate; i++) {
-					//var target = iconElement.cloneNode(true);
-					//renderTarget.appendChild(target);
+				var half = item.rating.average.toString().split('.');
+
+				for (var i = 0; i < rate; i++) {
 					$mdIcon(urls[0]).then(function(iconEle) {
 						renderTarget.appendChild(iconEle);
 					});
 				}
 
+				if (half[1] <= 5) {
+					$mdIcon(urls[1]).then(function(iconEle) {
+						renderTarget.appendChild(iconEle);
+					});
+					rate++;
+				}
+				var len = 5 - rate;
+				while (len > 0) {
+					$mdIcon(urls[2]).then(function(iconEle) {
+						renderTarget.appendChild(iconEle);
+					});
+					len--;
+				}
 				item.render = true;
 			}
 			else {
