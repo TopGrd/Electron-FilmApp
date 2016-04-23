@@ -5,17 +5,36 @@
     <h2>
         全部热映
     </h2>
-    <div  class="">
-        <ul layout="row" layout-wrap>
+    <div class="">
+        <ul layout="row" layout-wrap class="movies">
             <li ng-repeat="item in allItems" flex="20">
                 <div class="item" ng-mouseover="renderRating(item)">
                     <div class="pro-it">
                         <div class="item-overlay opacity">
-                            <div class="rate-info padder">
+                            <span class="rate-info padder inline-block"></span>
+                            <span class="grade">{{item.rating.average}}</span>
+                            <div class="actor-info">
+                                <p>
+                                    导演：<span ng-repeat="director in item.directors">{{director.name}} </span>
+                                </p>
+                                <p>
+                                    类型：<span ng-repeat="cat in item.genres">{{cat}} </span>
+                                </p>
+                                <p>
+                                    主演：<span ng-repeat="actor in item.casts">{{actor.name}}
+                                    </span>
+                                </p>
+                                <div class="like-button">
+                                    <md-button class="md-icon-button md-accent" aria-label="Favorite">
+                                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: red;"></md-icon>
+                                    </md-button>
+                                </div>
                             </div>
-                            {{item.rating.average}}
                         </div>
-                        <img src="{{item.images.large}}" alt="" />
+                        <img ng-src="{{item.images.large}}" alt=""/>
+                    </div>
+                    <div class="bottom-info">
+                        <a class="text-esp" href="{{item.alt}}">{{item.title}}</a>
                     </div>
                 </div>
             </li>

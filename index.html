@@ -45,7 +45,7 @@
                             <span>Movie
                             </span>
                             <span flex></span>
-                            <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.go(-1)">
+                            <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
                                 <md-icon md-svg-src="img/icons/back.svg"></md-icon>
                             </md-button>
                             <md-button class="md-fab md-mini" aria-label="next" onClick="javascript:history.go(1)">
@@ -108,7 +108,7 @@
                     mouseWheel: true,
                     interactiveScrollbars: true,
                     shrinkScrollbars: 'scale',
-                    fadeScrollbars: false
+                    fadeScrollbars: true
                 });
             }
 

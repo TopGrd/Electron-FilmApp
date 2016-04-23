@@ -175,3 +175,38 @@ body {
     padding-left: 15px;
     padding-right: 15px;
 }
+.movies {
+    padding: 10px;
+}
+.bottom-info {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.bottom-info a {
+    color: #545a5f;
+    text-decoration: none;
+    font-size: 14px;
+}
+.text-esp {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.inline-block {
+    display: inline-block;
+}
+.grade {
+    display: inline-block;
+    font-size: 14px;
+    position: absolute;
+    margin-top: 12px;
+}
+.actor-info {
+    padding: 20px;
+}
+.like-button {
+    right: 5px;
+    position: absolute;
+    bottom: 5px;
+}

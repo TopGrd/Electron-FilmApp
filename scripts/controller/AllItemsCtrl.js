@@ -40,6 +40,7 @@ angular.module('app')
 			if (item.render === undefined&&item.render !== true) {
 				var renderTarget = event.currentTarget.children[0].children[0].children[0];
 				var rate = Math.round((item.rating.average) / 2);
+				var len = 0;
 				var urls = [
 					'img/icons/star.svg',
 					'img/icons/half-star.svg',
@@ -53,19 +54,27 @@ angular.module('app')
 					});
 				}
 
-				if (half[1] <= 5) {
+				if (rate*2 < item.rating.average) {
 					$mdIcon(urls[1]).then(function(iconEle) {
 						renderTarget.appendChild(iconEle);
+						len = 5 - rate-1;
+						while (len > 0) {
+							$mdIcon(urls[2]).then(function(iconEle) {
+								renderTarget.appendChild(iconEle);
+							});
+							len--;
+						}
 					});
-					rate++;
+				}else {
+					len = 5 - rate;
+					while (len > 0) {
+						$mdIcon(urls[2]).then(function(iconEle) {
+							renderTarget.appendChild(iconEle);
+						});
+						len--;
+					}
 				}
-				var len = 5 - rate;
-				while (len > 0) {
-					$mdIcon(urls[2]).then(function(iconEle) {
-						renderTarget.appendChild(iconEle);
-					});
-					len--;
-				}
+
 				item.render = true;
 			}
 			else {
@@ -73,4 +82,5 @@ angular.module('app')
 			}
 
 		};
+
 	}]);
