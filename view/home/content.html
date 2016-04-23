@@ -1,44 +1,16 @@
-<div class="main-page my-scroll-area" ng-controller="HomeContentCtrl as hc" ng-cloak>
+<div class="main-page my-scroll-area tabsDemoDynamicHeight" ng-controller="HomeContentCtrl as hc" ng-cloak >
     <div layout="row" layout-sm="column" layout-align="center center" ng-show="hc.activated" class="main-page">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
+    <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+            <md-tab label="热映">
+                <md-content class="md-padding">
+                    <div class="" ng-include="'view/home/allItems.html'">
 
-    <h2>正在热映
-        <span>{{allItems.length}}</span>
-        部
-        <a href="#allItems">全部热映»</a>
-    </h2>
-    <div  class="">
-        <ul layout="row" layout-wrap class="movies">
-            <li ng-repeat="item in items" flex="20">
-                <div class="item" ng-mouseover="renderRating(item)">
-                    <div class="pro-it">
-                        <div class="item-overlay opacity">
-                            <span class="rate-info padder inline-block">
-                            </span>
-                            <span class="grade">{{item.rating.average}}</span>
-                            <div class="actor-info">
-                                <p>
-                                    导演：<span ng-repeat="director in item.directors">{{director.name}} </span>
-                                </p>
-                                <p>
-                                    类型：<span ng-repeat="cat in item.genres">{{cat}} </span>
-                                </p>
-                                <p>
-                                    主演：<span ng-repeat="actor in item.casts">{{actor.name}}
-                                    </span>
-                                </p>
-                                <div class="like-button">
-                                    <md-button class="md-icon-button md-accent" aria-label="Favorite">
-                                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: red;"></md-icon>
-                                    </md-button>
-                                </div>
-                            </div>
-                        </div>
-                        <img ng-src="{{item.images.large}}" alt="" />
                     </div>
-                </div>
-            </li>
-        </ul>
-    </div>
+                </md-content>
+            </md-tab>
+        </md-tabs>
+    </md-content>
 </div>
