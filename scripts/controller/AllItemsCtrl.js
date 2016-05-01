@@ -46,7 +46,6 @@ angular.module('app')
 					'img/icons/half-star.svg',
 					'img/icons/star_border.svg'
 				];
-				var half = item.rating.average.toString().split('.');
 
 				for (var i = 0; i < rate; i++) {
 					$mdIcon(urls[0]).then(function(iconEle) {
