@@ -22,7 +22,6 @@
         <script src="scripts/controller/AllItemsCtrl.js"></script>
         <script src="scripts/controller/NextCtrl.js"></script>
         <script src="scripts/service/DataServie.js"></script>
-        <script src="./scripts/lib/iscroll.js" onload="window.IScroll = module.exports;"></script>
         <!--suppress HtmlUnknownTarget: Composite only exists on Production BUILD -->
         <!-- @endif -->
         <!-- @if NODE_ENV='production' -->
@@ -30,92 +29,69 @@
         <!-- <script src="dist/controller.js"></script> -->
         <!-- @endif -->
     </head>
-    <body onload="loaded()">
-        <div class="page-container">
-            <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar">
-                <md-content>
-                    <md-toolbar class="navgi">
-                        <div class="md-toolbar-tools">
-                            <!--    <md-button class="md-fab" aria-label="Settings" ng-disabled="false" ng-click="toggleRight()">
-                                <md-icon md-svg-icon="img/a0.png" class="avatar"></md-icon>
-                            </md-button> -->
-                            <div class="avatar" ng-click="toggleRight()">
-                                <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
-                            </div>
-                            <span flex="5"></span>
-                            <span>Movie
-                            </span>
-                            <span flex></span>
-                            <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
-                                <md-icon md-svg-src="img/icons/back.svg"></md-icon>
-                            </md-button>
-                            <md-button class="md-fab md-mini" aria-label="next" onClick="javascript:history.go(1)">
-                                <md-icon md-svg-src="img/icons/next.svg"></md-icon>
-                            </md-button>
-                            <span flex="5"></span>
-                            <div class="contain-icon">
-                                <md-icon md-svg-src="img/icons/search.svg" class="search-icon"></md-icon>
-                            </div>
-                            <input type="search" name="name" value="" class="search-box" placeholder="     搜索...">
-                            <span flex></span>
-                            <md-button class="md-icon-button nav-button" aria-label="Samll" ng-click="smallWin()">
-                                <md-icon md-svg-icon="img/icons/small.svg"></md-icon>
-                            </md-button>
-                            <md-button class="md-icon-button nav-button" aria-label="FullScreen" ng-click="fullWin()">
-                                <md-icon md-svg-icon="img/icons/fullscreen.svg"></md-icon>
-                            </md-button>
-                            <md-button class="md-icon-button nav-button" aria-label="Close" ng-click="closeWin()">
-                                <md-icon md-svg-icon="img/icons/close.svg"></md-icon>
-                            </md-button>
-                        </div>
-                    </md-toolbar>
-                </md-content>
-                <div class="" layout="row">
-                    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-                        <md-button class="avatarBtn">
-                            <md-icon md-svg-icon="img/icons/avatar-1.svg" class="avatar"></md-icon>
-                        </md-button>
-                        <p style="text-align: center; margin-top: -10px;">
-                            TopGrd
-                        </p>
-
-                        <md-content ng-controller="LeftCtrl" layout-padding>
-                            <form>
-                                <md-input-container>
-                                    <label for="testInput">Test input</label>
-                                    <input type="text" id="testInput" ng-model="data" md-autofocus>
-                                </md-input-container>
-                            </form>
-                            <md-button ng-click="close()" class="md-primary">
-                                Close Sidenav Right
-                            </md-button>
-                        </md-content>
-                    </md-sidenav>
+    <body>
+        <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar" layout="column" style="height: 800px;">
+            <md-toolbar class="navgi"  ng-if="true">
+                <div class="md-toolbar-tools">
+                    <div class="avatar" ng-click="toggleRight()">
+                        <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
+                    </div>
+                    <span flex="5"></span>
+                    <span>Movie
+                    </span>
+                    <span flex></span>
+                    <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
+                        <md-icon md-svg-src="img/icons/back.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-mini" aria-label="next" onClick="javascript:history.go(1)">
+                        <md-icon md-svg-src="img/icons/next.svg"></md-icon>
+                    </md-button>
+                    <span flex="5"></span>
+                    <div class="contain-icon">
+                        <md-icon md-svg-src="img/icons/search.svg" class="search-icon"></md-icon>
+                    </div>
+                    <input type="search" name="name" value="" class="search-box" placeholder="     搜索...">
+                    <span flex></span>
+                    <md-button class="md-icon-button nav-button" aria-label="Samll" ng-click="smallWin()">
+                        <md-icon md-svg-icon="img/icons/small.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button nav-button" aria-label="FullScreen" ng-click="fullWin()">
+                        <md-icon md-svg-icon="img/icons/fullscreen.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button nav-button" aria-label="Close" ng-click="closeWin()">
+                        <md-icon md-svg-icon="img/icons/close.svg"></md-icon>
+                    </md-button>
                 </div>
-            </div>
-        </div>
-        <div class="main-container" id="wrapper">
-            <div class="" id="scroller">
-                <ng-view class="page">
-                    <h1>Loading...</h1>
-                </ng-view>
-            </div>
-        </div>
-        <script type="text/javascript">
-            var myScroll;
-            function loaded() {
-                myScroll = new IScroll('#wrapper', {
-                    scrollbars: true,
-                    mouseWheel: true,
-                    interactiveScrollbars: true,
-                    shrinkScrollbars: 'scale',
-                    fadeScrollbars: true
-                });
-            }
+            </md-toolbar>
+            <md-content flex>
+                <div class="main-container">
+                    <ng-view class="page">
+                        <h1>Loading...</h1>
+                    </ng-view>
+                </div>
+            </md-content>
+            <div class="" layout="row">
+                <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+                    <md-button class="avatarBtn">
+                        <md-icon md-svg-icon="img/icons/avatar-1.svg" class="avatar"></md-icon>
+                    </md-button>
+                    <p style="text-align: center; margin-top: -10px;">
+                        TopGrd
+                    </p>
 
-            document.addEventListener('touchmove', function(e) {
-                e.preventDefault();
-            }, false);
-        </script>
+                    <md-content ng-controller="LeftCtrl" layout-padding>
+                        <form>
+                            <md-input-container>
+                                <label for="testInput">Test input</label>
+                                <input type="text" id="testInput" ng-model="data" md-autofocus>
+                            </md-input-container>
+                        </form>
+                        <md-button ng-click="close()" class="md-primary">
+                            Close Sidenav Right
+                        </md-button>
+                    </md-content>
+                </md-sidenav>
+            </div>
+        </div>
     </body>
 </html>

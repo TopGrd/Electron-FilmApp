@@ -13,7 +13,7 @@ angular.module('app')
 		}, 100);
 
 		var options = {
-			url: 'https://api.douban.com/v2/movie/coming_soon?count=50',
+			url: 'https://api.douban.com/v2/movie/coming_soon?count=20',
 			headers: {
 				'User-agent': 'request'
 			}
@@ -23,18 +23,7 @@ angular.module('app')
 			.then(function(data) {
 				self.activated = false;
 				$scope.allItems = data;
-			})
-			.then(function() {
-				onCompletion();
 			});
-
-		function onCompletion() {
-			// Update here your DOM
-
-			setTimeout(function() {
-				myScroll.refresh();
-			}, 200);
-		}
 
 		$scope.renderRating = function(item) {
 			if (item.render === undefined&&item.render !== true) {
