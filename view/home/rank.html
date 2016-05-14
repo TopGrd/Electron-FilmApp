@@ -1,30 +1,28 @@
-<div class="main-page" ng-controller="AllItemsCtrl as ac" ng-cloak>
-    <div layout="row" layout-sm="column" layout-align="center center" ng-show="ac.activated" class="main-page">
+<div class="main-page" ng-controller="RankCtrl as rc" ng-cloak>
+    <div layout="row" layout-sm="column" layout-align="center center" ng-show="rc.activated" class="main-page">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
-    <h2 ng-show="!ac.activated">正在热映
+    <h2>正在热映
         <span>{{allItems.length}}</span>
         部
     </h2>
     <div class="">
         <ul layout="row" layout-wrap class="movies">
             <li ng-repeat="item in allItems" flex="20">
-                <div class="item" ng-mouseover="renderRating(item)">
+                <div class="item" ng-mouseover="renderRating(item.subject)">
                     <div class="pro-it">
                         <div class="item-overlay opacity">
                             <span class="rate-info padder inline-block"></span>
                             <span class="grade">{{item.rating.average}}</span>
                             <div class="actor-info">
                                 <p>
-                                    导演：<span ng-repeat="director in item.directors">{{director.name}}
-                                    </span>
+                                    导演：<span ng-repeat="director in item.subject.directors">{{director.name}} </span>
                                 </p>
                                 <p>
-                                    类型：<span ng-repeat="cat in item.genres">{{cat}}
-                                    </span>
+                                    类型：<span ng-repeat="cat in item.subject.genres">{{cat}} </span>
                                 </p>
                                 <p>
-                                    主演：<span ng-repeat="actor in item.casts">{{actor.name}}
+                                    主演：<span ng-repeat="actor in item.subject.casts">{{actor.name}}
                                     </span>
                                 </p>
                                 <div class="like-button">
@@ -34,10 +32,10 @@
                                 </div>
                             </div>
                         </div>
-                        <img ng-src="{{item.images.large}}" alt=""/>
+                        <img ng-src="{{item.subject.images.large}}" alt=""/>
                     </div>
                     <div class="bottom-info">
-                        <a class="text-esp" href="{{item.alt}}">{{item.title}}</a>
+                        <a class="text-esp" href="{{item.subject.alt}}">{{item.subject.title}}</a>
                     </div>
                 </div>
             </li>

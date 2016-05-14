@@ -1,14 +1,14 @@
 /**
  * @Author: Li'Zhuo
- * @Date:   2016-05-01 11:09:41
+ * @Date:   2016-05-02 12:54:31
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-06 15:06:40
+ * @Last modified time: 2016-05-06 15:06:50
  */
 
 angular.module('app')
-    .controller('NextCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', function(DataService, $scope, $q, $interval, $mdIcon) {
+    .controller('RankCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', function(DataService, $scope, $q, $interval, $mdIcon) {
         var self = this;
         self.activated = true;
         self.determinateValue = 30;
@@ -22,7 +22,7 @@ angular.module('app')
         }, 100);
 
         var options = {
-            url: 'https://api.douban.com/v2/movie/coming_soon?count=20',
+            url: 'https://api.douban.com/v2/movie/us_box',
             headers: {
                 'User-agent': 'request'
             }

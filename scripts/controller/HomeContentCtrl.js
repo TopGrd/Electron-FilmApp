@@ -1,9 +1,23 @@
-angular.module('app')
-	.controller('HomeContentCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', function(DataService, $scope, $q, $interval, $mdIcon) {
-		$scope.tabs = [
-			{label: '正在上映', tpl: 'view/home/allItems.html'},
-			{label: '即将上映', tpl: 'view/home/next.html'}/*,
-			{label: '排行榜', tpl: 'view/home/rank.html'}*/
-		];
+/**
+ * @Author: Li'Zhuo
+ * @Date:   2016-04-08 14:11:25
+ * @Email:  topgrd@outlook.com
+ * @Project: ES6
+ * @Last modified by:   Li'Zhuo
+ * @Last modified time: 2016-05-06 15:06:16
+ */
 
-	}]);
+angular.module('app')
+    .controller('HomeContentCtrl', ['DataService', '$scope', '$q', function(DataService, $scope, $q) {
+        $scope.tabs = [{
+            label: '正在上映',
+            tpl: 'view/home/allItems.html'
+        }, {
+            label: '即将上映',
+            tpl: 'view/home/next.html'
+        }, {
+            label: '北美票房榜',
+            tpl: 'view/home/rank.html'
+        }];
+
+    }]);

@@ -3,8 +3,7 @@
         <md-tabs md-dynamic-height md-border-bottom>
             <md-tab ng-repeat="tab in tabs" label="{{tab.label}}" ng-click="refreshTab()">
                 <md-content class="md-padding">
-                    <div class="" ng-include="tab.tpl">
-                    </div>
+                    <div class="" ng-include="tab.tpl"></div>
                 </md-content>
             </md-tab>
         </md-tabs>

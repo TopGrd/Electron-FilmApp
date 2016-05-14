@@ -193,15 +193,34 @@ body {
     margin-top: 0;
 }
 md-toolbar.md-accent > md-tabs.md-default-theme, md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-ink-bar {
-    color: rgb(255,82,82);
-    background: rgb(255,82,82);
+    color: rgb(255, 82, 82);
+    background: rgb(255, 82, 82);
 }
 md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active, md-tabs .md-tab.md-active {
-    color: rgb(16,108,200);
+    color: rgb(16, 108, 200);
 }
-
-::-webkit-scrollbar{width:9px;height:9px;}
-::-webkit-scrollbar-button:start:decrement,#doc ::-webkit-scrollbar-button:end:increment{display:block;height:0;background-color:transparent;}
-::-webkit-scrollbar-track-piece{background-color:#FAFAFA;-webkit-border-radius:0;-webkit-border-bottom-right-radius:8px;-webkit-border-bottom-left-radius:8px;}
-::-webkit-scrollbar-thumb:vertical{height:50px;background-color:#999;-webkit-border-radius:8px;}
-::-webkit-scrollbar-thumb:horizontal{width:50px;background-color:#999;-webkit-border-radius:8px;}
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+}
+::-webkit-scrollbar-button:start:decrement, #doc::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 0;
+    background-color: transparent;
+}
+::-webkit-scrollbar-track-piece {
+    background-color: #FAFAFA;
+    -webkit-border-radius: 0;
+    -webkit-border-bottom-right-radius: 8px;
+    -webkit-border-bottom-left-radius: 8px;
+}
+::-webkit-scrollbar-thumb:vertical {
+    height: 50px;
+    background-color: #999;
+    -webkit-border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:horizontal {
+    width: 50px;
+    background-color: #999;
+    -webkit-border-radius: 8px;
+}
