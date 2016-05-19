@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-06 11:10:08
+ * @Last modified time: 2016-05-19 08:34:50
  */
 
 var request = require('request');
@@ -16,12 +16,16 @@ function DataService($q) {
         getHotMovies: getHotMovies
     };
 
-    function getHotMovies(options) {
+    function getHotMovies(options, detailType) {
         var deferred = $q.defer();
         request(options, function(error, response, body) {
             if (!error && response.statusCode == 200) {
                 var data = JSON.parse(body);
-                deferred.resolve(data.subjects);
+                if (detailType === true) {
+                    deferred.resolve(data);
+                } else {
+                    deferred.resolve(data.subjects);
+                }
             }
         });
 

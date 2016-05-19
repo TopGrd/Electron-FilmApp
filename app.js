@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-06 10:54:40
+ * @Last modified time: 2016-05-19 08:15:39
  */
 
 var app = angular.module(
@@ -26,6 +26,12 @@ var app = angular.module(
                 '/allItems', {
                     templateUrl: './view/home/allItems.html',
                     controller: 'AllItemsCtrl'
+                }
+            );
+            $routeProvider.when(
+                '/:itemId', {
+                    templateUrl: './view/home/detail.html',
+                    controller: 'DetailCtrl'
                 }
             )
             $routeProvider.otherwise({
