@@ -2,5 +2,37 @@
     <div layout="row" layout-sm="column" layout-align="center center" ng-show="dc.activated" class="main-page">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
-    <h2>hello world</h2>
+    <md-content style="background:#ECF0F1;" layout-padding>
+        <div class="detail-info">
+            <img class="detail-img" src="{{detail.images.large}}" alt=""/>
+            <div class="detail-box">
+                <h3>{{detail.title}} {{detail.original_title}}
+                </h3>
+                <div class="detail-time">
+                    <md-icon md-svg-src="img/icons/stop-watch.svg" class="s24 item-time" aria-label="time"></md-icon>
+                    <span>123min</span>
+                </div>
+                <section layout="row" layout-sm="column" layout-align="start center" layout-wrap style="margin-bottom:12px;">
+                    <md-button class="md-raised" ng-repeat="ge in detail.genres">{{ge}}</md-button>
+                </section>
+                <div class="detail-rating">
+                    <span>{{detail.rating.average}}</span>
+                    <span class="rating-span">你的评分:
+                    </span>
+                    <ng-rate-it></ng-rate-it>
+                </div>
+                <div class="collect">
+                    {{detail.collect_count}}人看过
+                </div>
+                <div class="detail-summary">
+                    <p>
+                        {{detail.summary}}
+                    </p>
+                </div>
+                <div class="comment">
+                    <md-icon md-svg-src="img/icons/pen-angled.svg" class="s24" aria-label="pen"></md-icon>
+                </div>
+            </div>
+        </div>
+    </md-content>
 </div>

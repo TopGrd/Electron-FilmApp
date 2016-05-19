@@ -3,15 +3,16 @@
  * @Date:   2016-04-07 13:05:02
  * @Email:  topgrd@outlook.com
  * @Project: ES6
- * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-19 08:15:39
+* @Last modified by:   Li'Zhuo
+* @Last modified time: 2016-05-19 15:02:31
  */
 
 var app = angular.module(
     'app', [
         'ngRoute',
         'ngMaterial',
-        'ngAnimate'
+        'ngAnimate',
+        'ngRateIt'
     ]
 ).config(
     [

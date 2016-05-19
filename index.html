@@ -9,6 +9,8 @@
         <script src="node_modules/angular-animate/angular-animate.min.js"></script>
         <script src="node_modules/angular-aria/angular-aria.min.js"></script>
         <script src="node_modules/angular-material/angular-material.min.js"></script>
+        <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css" />
+        <script src="bower_components/angular-rateit/dist/ng-rateit.js"></script>
         <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
         <link rel="stylesheet" href="https://raw.githubusercontent.com/premasagar/cleanslate/master/cleanslate.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="css/main.css" charset="utf-8">
@@ -33,15 +35,12 @@
     </head>
     <body>
         <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar" layout="column" style="height: 800px;">
-            <md-toolbar class="navgi"  ng-if="true">
+            <md-toolbar class="navgi" ng-if="true">
                 <div class="md-toolbar-tools">
-                    <div class="avatar" ng-click="toggleRight()">
-                        <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
-                    </div>
-                    <span flex="5"></span>
                     <span>Movie
                     </span>
-                    <span flex></span>
+
+                    <span flex="5"></span>
                     <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
                         <md-icon md-svg-src="img/icons/back.svg"></md-icon>
                     </md-button>
@@ -49,11 +48,19 @@
                         <md-icon md-svg-src="img/icons/next.svg"></md-icon>
                     </md-button>
                     <span flex="5"></span>
-                    <div class="contain-icon">
+                    <!--<div class="contain-icon">
                         <md-icon md-svg-src="img/icons/search.svg" class="search-icon"></md-icon>
-                    </div>
-                    <input type="search" name="name" value="" class="search-box" placeholder="     搜索...">
+                    </div>-->
+                    <md-input-container md-no-float class="md-block search-box">
+                        <md-icon md-svg-src="img/icons/search.svg"></md-icon>
+                        <input type="text" placeholder="搜索...">
+                    </md-input-container>
                     <span flex></span>
+
+                    <div class="avatar" ng-click="toggleRight()">
+                        <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
+                    </div>
+                    <span flex="5"></span>
                     <md-button class="md-icon-button nav-button" aria-label="Samll" ng-click="smallWin()">
                         <md-icon md-svg-icon="img/icons/small.svg"></md-icon>
                     </md-button>
