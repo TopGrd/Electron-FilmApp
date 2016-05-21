@@ -3,15 +3,17 @@
 * @Date:   2016-04-08 11:40:18
 * @Email:  topgrd@outlook.com
 * @Project: ES6
-* @Last modified by:   Li'Zhuo
-* @Last modified time: 2016-05-19 16:03:42
+ * @Last modified by:   Li'Zhuo
+ * @Last modified time: 2016-05-21 11:39:53
 */
 
 a img {
     border: 0;
 }
-li {
+ul, li {
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 .avatarBtn {
     width: 95%;
@@ -232,6 +234,7 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
 }
 .detail-info {
     margin-top: 50px;
+    margin-left: 6px;
 }
 .detail-img {
     width: 230px;
@@ -254,6 +257,7 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
 }
 .detail-rating {
     margin-bottom: 12px;
+    margin-left: 6px;
 }
 .detail-rating span {
     color: #F4B305;
@@ -267,4 +271,28 @@ span.rating-span {
 }
 .collect {
     font-size: 20px;
+    margin-left: 6px;
+}
+.detail-summary {
+    margin-left: 6px;
+}
+.casts {
+    background: #fff;
+    width: 100%;
+    -webkit-border-top-left-radius: 40px;
+    -webkit-border-bottom-right-radius: 40px;
+    -moz-border-radius-topleft: 40px;
+    -moz-border-radius-bottomright: 40px;
+    border-top-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+.cast-list {
+    padding: 12px;
+}
+.cast-li {
+    display: inline-block;
+}
+.cast-li img {
+    width: 230px;
+    height: 240px;
 }

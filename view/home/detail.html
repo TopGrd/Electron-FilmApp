@@ -4,9 +4,10 @@
     </div>
     <md-content style="background:#ECF0F1;" layout-padding>
         <div class="detail-info">
-            <img class="detail-img" src="{{detail.images.large}}" alt=""/>
+            <img class="detail-img" ng-src="{{detail.images.large}}" alt=""/>
             <div class="detail-box">
-                <h3>{{detail.title}} {{detail.original_title}}
+                <h3>{{detail.title}}
+                    {{detail.original_title}}
                 </h3>
                 <div class="detail-time">
                     <md-icon md-svg-src="img/icons/stop-watch.svg" class="s24 item-time" aria-label="time"></md-icon>
@@ -30,8 +31,35 @@
                     </p>
                 </div>
                 <div class="comment">
-                    <md-icon md-svg-src="img/icons/pen-angled.svg" class="s24" aria-label="pen"></md-icon>
+                    <md-button class="md-fab md-mini md-primary" aria-label="comment">
+                        <md-tooltip md-direction="bottom">
+                            评论
+                        </md-tooltip>
+                        <md-icon md-svg-src="img/icons/edit.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-fab md-mini md-warn" aria-label="comment">
+                        <md-tooltip md-direction="bottom">
+                            收藏
+                        </md-tooltip>
+                        <md-icon md-svg-src="img/icons/favorite.svg"></md-icon>
+                    </md-button>
                 </div>
+            </div>
+        </div>
+    </md-content>
+    <md-content layout="row" layout-sm="column" layout-align="start center" layout-padding style="background:#ECF0F1;">
+        <div class="casts">
+            <p>
+                演员
+            </p>
+            <div class="cast-list">
+                <ul layout="row" layout-align="center center" layout-wrap>
+                    <li ng-repeat="cast in detail.casts" class="cast-li">
+                        <div class="">
+                            <img ng-src="{{cast.avatars.large}}" alt="{{cast.name}}" />
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
     </md-content>

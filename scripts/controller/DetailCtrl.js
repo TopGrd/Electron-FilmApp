@@ -3,8 +3,8 @@
  * @Date:   2016-05-19 08:20:08
  * @Email:  topgrd@outlook.com
  * @Project: ES6
-* @Last modified by:   Li'Zhuo
-* @Last modified time: 2016-05-19 15:02:54
+ * @Last modified by:   Li'Zhuo
+ * @Last modified time: 2016-05-21 10:47:24
  */
 
 angular.module('app')
@@ -34,5 +34,4 @@ angular.module('app')
                 $scope.detail = data;
                 console.log($scope.detail);
             });
-
     }]);
