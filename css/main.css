@@ -4,7 +4,7 @@
 * @Email:  topgrd@outlook.com
 * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-21 11:39:53
+ * @Last modified time: 2016-05-23 12:34:39
 */
 
 a img {
@@ -80,7 +80,7 @@ md-sidenav > md-toolbar {
     height: 65px;
 }
 body {
-    overflow: hidden;
+    /*overflow: hidden;*/
     font: 12px/150% helvetica, "微软雅黑", "microsoft yahei", verdana, lucida, arial, sans-serif, "黑体";
 }
 .main-page h2 {
@@ -234,7 +234,7 @@ md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item
 }
 .detail-info {
     margin-top: 50px;
-    margin-left: 6px;
+    margin-left: 5%;
 }
 .detail-img {
     width: 230px;
@@ -271,6 +271,7 @@ span.rating-span {
 }
 .collect {
     font-size: 20px;
+    margin-bottom: 12px;
     margin-left: 6px;
 }
 .detail-summary {
@@ -278,7 +279,8 @@ span.rating-span {
 }
 .casts {
     background: #fff;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     -webkit-border-top-left-radius: 40px;
     -webkit-border-bottom-right-radius: 40px;
     -moz-border-radius-topleft: 40px;
@@ -291,8 +293,44 @@ span.rating-span {
 }
 .cast-li {
     display: inline-block;
+    margin-left: 15px;
 }
 .cast-li img {
-    width: 230px;
-    height: 240px;
+    width: 220px;
+    height: 220px;
+}
+.cast-tabs md-pagination-wrapper {
+    position: relative;
+    float: right;
+    margin-right: 5%;
+}
+.cast-tabs md-pagination-wrapper {
+    min-width: 220px;
+}
+.cast-tabs md-tab-item {
+    background: #fff;
+    border-radius: 20%;
+    margin-left: 5px;
+    min-width: 100px;
+    height: 40px;
+}
+.cast-tabs .md-tab {
+    line-height: 100%;
+    background: transparent;
+    color: #8AD7B3;
+}
+.cast-tabs .md-tab.md-active {
+    background: #fff;
+}
+.allbg {
+    background:#ECF0F1;
+}
+.cast-bottom {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+.commennt-margin {
+    margin-left: 5%;
+    margin-right: 5%;
 }

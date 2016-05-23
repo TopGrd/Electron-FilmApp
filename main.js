@@ -3,8 +3,8 @@
  * @Date:   2016-04-07 13:05:02
  * @Email:  topgrd@outlook.com
  * @Project: ES6
-* @Last modified by:   Li'Zhuo
-* @Last modified time: 2016-05-19 12:25:12
+ * @Last modified by:   Li'Zhuo
+ * @Last modified time: 2016-05-23 11:31:42
  */
 
 var app = require('app'); // Module to control application life.
@@ -16,7 +16,6 @@ require('crash-reporter').start();
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 var mainWindow = null;
-
 // Quit when all windows are closed.
 app.on('window-all-closed', function() {
     // On OS X it is common for applications and their menu bar
@@ -38,7 +37,10 @@ app.on('ready', function() {
         fullscreen: false,
         autoHideMenuBar: true,
         frame: false,
-        movable: true
+        movable: true,
+        webPreferences: {
+            plugins: true
+        }
     });
 
     // and load the index.html of the app.
