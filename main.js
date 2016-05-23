@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-23 11:31:42
+ * @Last modified time: 2016-05-23 16:46:57
  */
 
 var app = require('app'); // Module to control application life.
@@ -33,7 +33,7 @@ app.on('ready', function() {
 
     mainWindow = new BrowserWindow({
         width: 1200,
-        height: 800,
+        height: 700,
         fullscreen: false,
         autoHideMenuBar: true,
         frame: false,

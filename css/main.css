@@ -4,7 +4,7 @@
 * @Email:  topgrd@outlook.com
 * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-23 12:34:39
+ * @Last modified time: 2016-05-23 16:36:07
 */
 
 a img {
@@ -80,7 +80,7 @@ md-sidenav > md-toolbar {
     height: 65px;
 }
 body {
-    /*overflow: hidden;*/
+    overflow: hidden;
     font: 12px/150% helvetica, "微软雅黑", "microsoft yahei", verdana, lucida, arial, sans-serif, "黑体";
 }
 .main-page h2 {
@@ -333,4 +333,26 @@ span.rating-span {
 .commennt-margin {
     margin-left: 5%;
     margin-right: 5%;
+}
+.center-avatar {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    top: 10px;
+}
+.my-slide {
+    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
+    overflow: hidden;
+}
+.bg-info p {
+    margin: 0;
+}
+.nav>li {
+    height: 50px;
+}
+.nav-primary ul.nav>li>a {
+    padding: 18px 20px;
 }

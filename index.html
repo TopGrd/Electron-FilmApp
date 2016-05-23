@@ -9,7 +9,7 @@
         <script src="node_modules/angular-animate/angular-animate.min.js"></script>
         <script src="node_modules/angular-aria/angular-aria.min.js"></script>
         <script src="node_modules/angular-material/angular-material.min.js"></script>
-        <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css" />
+        <link rel="stylesheet" href="bower_components/angular-rateit/dist/ng-rateit.css"/>
         <script src="bower_components/angular-rateit/dist/ng-rateit.js"></script>
         <script src="scripts/lib/echarts.min.js"></script>
         <script src="scripts/lib/shine.js"></script>
@@ -84,25 +84,67 @@
                 </div>
             </md-content>
             <div class="" layout="row">
-                <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
-                    <md-button class="avatarBtn">
+                <md-sidenav class="md-sidenav-left md-whiteframe-z2 my-slide" md-component-id="left">
+                    <!--<md-button class="avatarBtn">
                         <md-icon md-svg-icon="img/icons/avatar-1.svg" class="avatar"></md-icon>
-                    </md-button>
-                    <p style="text-align: center; margin-top: -10px;">
-                        TopGrd
-                    </p>
+                    </md-button>-->
+                    <div class="bg-info">
+                        <img class="avatar center-avatar" src="img/a0.png" alt=""/>
+                        <p style="text-align: center;">
+                            TopGrd
+                        </p>
+                    </div>
+                    <aside class="bg-black dk aside hidden-print" id="nav" style="height:100%;background:#232c32;">
+                        <section class="vbox">
+                            <section class="w-f-md scrollable">
+                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto;">
+                                    <div class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px" data-railopacity="0.2" style="overflow: hidden; width: auto;">
 
-                    <md-content ng-controller="LeftCtrl" layout-padding>
-                        <form>
-                            <md-input-container>
-                                <label for="testInput">Test input</label>
-                                <input type="text" id="testInput" ng-model="data" md-autofocus>
-                            </md-input-container>
-                        </form>
-                        <md-button ng-click="close()" class="md-primary">
-                            Close Sidenav Right
-                        </md-button>
-                    </md-content>
+                                        <!-- nav -->
+                                        <nav class="nav-primary hidden-xs">
+                                            <ul class="nav bg clearfix">
+                                                <li class="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
+                                                    Discover
+                                                </li>
+                                                <li>
+                                                    <a href="index.html">
+                                                        <i class="icon-disc icon text-success"></i>
+                                                        <span class="font-bold">最近更新</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="genres.html">
+                                                        <i class="icon-music-tone-alt icon text-info"></i>
+                                                        <span class="font-bold">收藏</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="events.html">
+                                                        <i class="icon-drawer icon text-primary-lter"></i>
+                                                        <b class="badge bg-primary pull-right">6</b>
+                                                        <span class="font-bold">提醒</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="listen.html">
+                                                        <i class="icon-list icon  text-info-dker"></i>
+                                                        <span class="font-bold">评论</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="video.html" data-target="#content" data-el="#bjax-el" data-replace="true">
+                                                        <i class="icon-social-youtube icon  text-primary"></i>
+                                                        <span class="font-bold">个人中心</span>
+                                                    </a>
+                                                </li>
+                                                <li class="m-b hidden-nav-xs"></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </footer>
+                        </section>
+                    </aside>
                 </md-sidenav>
             </div>
         </div>
