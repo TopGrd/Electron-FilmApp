@@ -4,11 +4,13 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-06 15:05:49
+ * @Last modified time: 2016-05-24 20:22:31
  */
 
 angular.module('app')
     .controller('AppCtrl', ['$rootScope', '$scope', '$interval', '$timeout', '$mdSidenav', '$log', function($rootScope, $scope, $interval, $timeout, $mdSidenav, $log) {
+        var self = this;
+        self.notify = false;
         $scope.remote = require('remote');
         var App = $scope.remote.require('app');
         var Win = $scope.remote.require('browser-window');
@@ -46,5 +48,12 @@ angular.module('app')
         $scope.closeWin = function() {
             App.quit();
         };
+
+        $scope.toggleIt = function() {
+            self.notify = !self.notify;
+        }
+        $scope.logout = function() {
+            $mdSidenav('left').toggle();
+        }
 
     }]);

@@ -4,7 +4,7 @@
 * @Email:  topgrd@outlook.com
 * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-23 16:36:07
+ * @Last modified time: 2016-05-24 21:20:08
 */
 
 a img {
@@ -355,4 +355,27 @@ span.rating-span {
 }
 .nav-primary ul.nav>li>a {
     padding: 18px 20px;
+}
+.dropdown-menu {
+    display: block;
+    right: 0;
+    left: none;
+}
+.badge.up {
+    top: 0;
+}
+md-datepicker {
+    background: #ECF0F1;
+}
+.datepickerMe .md-datepicker-button {
+    margin: 0;
+    width: 24px;
+    height: 24px;
+    max-height: 24px
+}
+.datepickerMe .md-datepicker-input-container {
+    border-bottom: 0;
+}
+.sex-switch {
+    line-height: 52px;
 }

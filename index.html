@@ -13,7 +13,7 @@
         <script src="bower_components/angular-rateit/dist/ng-rateit.js"></script>
         <script src="scripts/lib/echarts.min.js"></script>
         <script src="scripts/lib/shine.js"></script>
-        <link rel="stylesheet" href="http://flatfull.com/themes/musik/css/app.v1.css" media="screen" title="no title" charset="utf-8">
+        <link rel="stylesheet" href="css/app.v1.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="node_modules/angular-material/angular-material.min.css"/>
         <link rel="stylesheet" href="https://raw.githubusercontent.com/premasagar/cleanslate/master/cleanslate.css" media="screen" title="no title" charset="utf-8">
         <link rel="stylesheet" href="css/main.css" charset="utf-8">
@@ -28,6 +28,7 @@
         <script src="scripts/controller/NextCtrl.js"></script>
         <script src="scripts/controller/RankCtrl.js"></script>
         <script src="scripts/controller/DetailCtrl.js"></script>
+        <script src="scripts/controller/LoginCtrl.js"></script>
         <script src="scripts/service/DataServie.js"></script>
         <script src="scripts/service/VideoService.js"></script>
         <!--suppress HtmlUnknownTarget: Composite only exists on Production BUILD -->
@@ -60,7 +61,51 @@
                         <input type="text" placeholder="搜索...">
                     </md-input-container>
                     <span flex></span>
-
+                    <md-button class="md-fab md-mini md-primary dropdown-toggle lt" aria-label="Notify" ng-click="toggleIt()">
+                        <md-icon md-svg-icon="img/icons/notify.svg"></md-icon>
+                        <span class="badge badge-sm up bg-danger count" style="display: inline-block;">3</span>
+                    </md-button>
+                    <span flex="5"></span>
+                    <section class="dropdown-menu aside-xl animated fadeInUp fade" ng-if="vm.notify">
+                        <section class="panel bg-white">
+                            <div class="panel-heading b-light bg-light">
+                                <strong>你有
+                                    <span class="count" style="display: inline;">3</span>
+                                    条新提醒</strong>
+                            </div>
+                            <div class="list-group list-group-alt">
+                                <a href="#" class="media list-group-item" style="display: block;">
+                                    <span class="pull-left thumb-sm text-center">
+                                        <i class="fa fa-envelope-o fa-2x text-success"></i>
+                                    </span>
+                                    <span class="media-body block m-b-none">Sophi 回复了你的评论<br>
+                                        <small class="text-muted">1分钟之前</small>
+                                    </span>
+                                </a>
+                                <a href="#" class="media list-group-item">
+                                    <span class="pull-left thumb-sm">
+                                        <img src="img/a0.png" alt="..." class="img-circle">
+                                    </span>
+                                    <span class="media-body block m-b-none">
+                                        哈哈哈啊<br>
+                                        <small class="text-muted">10 分钟之前</small>
+                                    </span>
+                                </a>
+                                <a href="#" class="media list-group-item">
+                                    <span class="media-body block m-b-none">
+                                        1.0  版本更新了<br>
+                                        <small class="text-muted">1 小时之前</small>
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="panel-footer text-sm">
+                                <a href="#" class="pull-right">
+                                    <i class="fa fa-cog"></i>
+                                </a>
+                                <a href="#notes" data-toggle="class:show animated fadeInRight">查看所有提醒</a>
+                            </div>
+                        </section>
+                    </section>
                     <div class="avatar" ng-click="toggleRight()">
                         <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
                     </div>
@@ -114,7 +159,7 @@
                                                 </li>
                                                 <li>
                                                     <a href="genres.html">
-                                                        <i class="icon-music-tone-alt icon text-info"></i>
+                                                        <i class="icon-film icon text-info"></i>
                                                         <span class="font-bold">收藏</span>
                                                     </a>
                                                 </li>
@@ -127,14 +172,20 @@
                                                 </li>
                                                 <li>
                                                     <a href="listen.html">
-                                                        <i class="icon-list icon  text-info-dker"></i>
+                                                        <i class="icon-bubbles icon  text-info-dker"></i>
                                                         <span class="font-bold">评论</span>
                                                     </a>
                                                 </li>
                                                 <li>
                                                     <a href="video.html" data-target="#content" data-el="#bjax-el" data-replace="true">
-                                                        <i class="icon-social-youtube icon  text-primary"></i>
+                                                        <i class="icon-user icon  text-primary"></i>
                                                         <span class="font-bold">个人中心</span>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a ng-href="#/login" ng-click="logout()">
+                                                        <i class="icon-close icon  text-warning"></i>
+                                                        <span class="font-bold">退出</span>
                                                     </a>
                                                 </li>
                                                 <li class="m-b hidden-nav-xs"></li>
