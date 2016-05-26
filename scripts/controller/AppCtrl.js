@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-24 20:22:31
+ * @Last modified time: 2016-05-26 13:56:38
  */
 
 angular.module('app')
@@ -12,9 +12,10 @@ angular.module('app')
         var self = this;
         self.notify = false;
         $scope.remote = require('remote');
+        // 引入App模块
         var App = $scope.remote.require('app');
         var Win = $scope.remote.require('browser-window');
-
+        // 获取当前焦点窗体
         var broWin = Win.getFocusedWindow();
         this.searchValue = '';
 
@@ -33,11 +34,20 @@ angular.module('app')
                     });
             };
         }
-
+        /**
+         * 最小化按钮响应方法
+         * @return null
+         */
         $scope.smallWin = function() {
             broWin.minimize();
         };
+
+        /**
+         * 最大化按钮响应方法
+         * @return null
+         */
         $scope.fullWin = function() {
+            // 如果程序没有最大化，则按钮生效，否则保持原状态
             if (!broWin.isMaximized()) {
                 broWin.maximize();
             } else {
@@ -45,6 +55,12 @@ angular.module('app')
             }
 
         };
+
+        /**
+         * 关闭按钮响应方法
+         * @return null
+         */
+
         $scope.closeWin = function() {
             App.quit();
         };
