@@ -3,3 +3,5 @@ build
 dist
 typings
 Gruntfile.js
+backend/node_modules
+backend/.tmp
