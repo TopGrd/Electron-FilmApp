@@ -1,3 +1,4 @@
-# movieApi
+# THE BACKEND OF APP  
 
-a [Sails](http://sailsjs.org) application
+modules  
+sails

@@ -4,11 +4,11 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-06-05 16:37:14
+ * @Last modified time: 2016-06-05 18:20:21
  */
 
 angular.module('app')
-    .controller('AppCtrl', ['$rootScope', '$scope', '$interval', '$timeout', '$mdSidenav', '$log', function($rootScope, $scope, $interval, $timeout, $mdSidenav, $log) {
+    .controller('AppCtrl', ['$rootScope', '$scope', '$interval', '$timeout', '$mdSidenav', '$log', '$http', function($rootScope, $scope, $interval, $timeout, $mdSidenav, $log, $http) {
         var self = this;
         self.notify = false;
         $scope.remote = require('remote');
@@ -70,6 +70,26 @@ angular.module('app')
         }
         $scope.logout = function() {
             $mdSidenav('left').toggle();
+        }
+
+        $scope.formData = {};
+
+        $scope.search = function() {
+            $http({
+                    method: 'GET',
+                    url: 'http://api.douban.com/v2/movie/search?q=' + $scope.formData.param
+                })
+                .success(function(data) {
+                    console.log(data);
+                    $scope.sendData = {
+
+                    };
+                    $scope.sendData.subjects = data.subjects;
+                    $scope.sendData.tit = data.title;
+
+                    $scope.$broadcast('searchData', $scope.sendData);
+                    location.assign('#/search');
+                })
         }
 
     }]);

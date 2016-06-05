@@ -29,8 +29,8 @@
         <script src="scripts/controller/RankCtrl.js"></script>
         <script src="scripts/controller/DetailCtrl.js"></script>
         <script src="scripts/controller/LoginCtrl.js"></script>
+        <script src="scripts/controller/ResultCtrl.js"></script>
         <script src="scripts/service/DataServie.js"></script>
-        <script src="scripts/service/VideoService.js"></script>
         <!--suppress HtmlUnknownTarget: Composite only exists on Production BUILD -->
         <!-- @endif -->
         <!-- @if NODE_ENV='production' -->
@@ -39,11 +39,11 @@
         <!-- @endif -->
     </head>
     <body>
-        <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar" layout="column" style="height: 800px;">
+        <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar" layout="column" style="height: 700px; bottom: 60px;">
             <md-toolbar class="navgi" ng-if="true">
                 <div class="md-toolbar-tools">
-                    <span>Movie
-                    </span>
+                    <a href="#/"><span>Movie
+                    </span></a>
 
                     <span flex="5"></span>
                     <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
@@ -56,10 +56,13 @@
                     <!--<div class="contain-icon">
                         <md-icon md-svg-src="img/icons/search.svg" class="search-icon"></md-icon>
                     </div>-->
-                    <md-input-container md-no-float class="md-block search-box">
-                        <md-icon md-svg-src="img/icons/search.svg"></md-icon>
-                        <input type="text" placeholder="搜索...">
-                    </md-input-container>
+                    <form name="searchForm" method="get" ng-submit="search()">
+                        <md-input-container md-no-float class="md-block search-box">
+                            <md-icon md-svg-src="img/icons/search.svg"></md-icon>
+                            <input type="text" placeholder="搜索..." ng-model="formData.param" name="queryData">
+                        </md-input-container>
+                    </form>
+
                     <span flex></span>
                     <md-button class="md-fab md-mini md-primary dropdown-toggle lt" aria-label="Notify" ng-click="toggleIt()">
                         <md-icon md-svg-icon="img/icons/notify.svg"></md-icon>

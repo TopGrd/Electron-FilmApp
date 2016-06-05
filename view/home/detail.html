@@ -2,7 +2,7 @@
     <div layout="row" layout-sm="column" layout-align="center center" ng-show="dc.activated" class="main-page">
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
     </div>
-    <md-content style="background:#ECF0F1;" layout-padding>
+    <md-content style="background:#ECF0F1;" layout-padding ng-show="!dc.activated">
         <div class="detail-info">
             <img class="detail-img" ng-src="{{detail.images.large}}" alt=""/>
             <div class="detail-box">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </md-content>
-    <md-content class="allbg">
+    <md-content class="allbg" ng-show="!dc.activated">
         <md-tabs md-dynamic-height md-no-ink-bar md-no-pagination class="cast-tabs">
             <md-tab label="&#9898; 演员">
                 <md-content layout="row" layout-sm="column" layout-align="start center" layout-padding style="background:#ECF0F1;">
@@ -87,11 +87,11 @@
             </md-tab>
         </md-tabs>
     </md-content>
-    <md-content layout="row" layout-sm="column" layout-align="center center" layout-padding style="background:#ECF0F1;">
+    <md-content layout="row" layout-sm="column" layout-align="center center" layout-padding style="background:#ECF0F1;" ng-show="!dc.activated">
         <div id="main" style="width: 500px;height:400px;"></div>
         <div id="main2" style="width: 500px;height:400px;"></div>
     </md-content>
-    <md-content class="allbg">
+    <md-content class="allbg" ng-show="!dc.activated">
 
         <section class="comment-list block commennt-margin">
             <article id="comment-id-1" class="comment-item">

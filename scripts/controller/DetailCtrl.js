@@ -4,11 +4,11 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-23 15:37:25
+ * @Last modified time: 2016-06-05 18:34:04
  */
 
 angular.module('app')
-    .controller('DetailCtrl', ['DataService', 'VideoService', '$scope', '$q', '$interval', '$mdIcon', '$routeParams', function(DataService, VideoService, $scope, $q, $interval, $mdIcon, $routeParams) {
+    .controller('DetailCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', '$routeParams', function(DataService, $scope, $q, $interval, $mdIcon, $routeParams) {
         var self = this;
         self.activated = true;
         self.determinateValue = 30;
@@ -28,12 +28,6 @@ angular.module('app')
             }
         };
 
-        var videoOptions = {
-            url: 'https://movie.douban.com/subject/' + id,
-            headers: {
-                'User-agent': 'request'
-            }
-        };
 
         DataService.getHotMovies(options, true)
             .then(function(data) {
@@ -41,10 +35,6 @@ angular.module('app')
                 $scope.detail = data;
                 renderChart();
                 console.log($scope.detail);
-            });
-        VideoService.getVideo(videoOptions)
-            .then(function(data) {
-                $scope.videoUrl = data;
             });
 
         function renderChart() {

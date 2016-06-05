@@ -4,7 +4,7 @@
 * @Email:  topgrd@outlook.com
 * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-24 21:20:08
+ * @Last modified time: 2016-06-05 16:44:47
 */
 
 a img {
@@ -281,12 +281,7 @@ span.rating-span {
     background: #fff;
     width: 90%;
     margin-left: 5%;
-    -webkit-border-top-left-radius: 40px;
-    -webkit-border-bottom-right-radius: 40px;
-    -moz-border-radius-topleft: 40px;
-    -moz-border-radius-bottomright: 40px;
-    border-top-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-radius: 20px;
 }
 .cast-list {
     padding: 12px;
