@@ -29,6 +29,7 @@
         <script src="scripts/controller/RankCtrl.js"></script>
         <script src="scripts/controller/DetailCtrl.js"></script>
         <script src="scripts/controller/LoginCtrl.js"></script>
+        <script src="scripts/controller/RegisterCtrl.js"></script>
         <script src="scripts/controller/ResultCtrl.js"></script>
         <script src="scripts/service/DataServie.js"></script>
         <!--suppress HtmlUnknownTarget: Composite only exists on Production BUILD -->
@@ -42,8 +43,10 @@
         <div ng-controller="AppCtrl as vm" ng-cloak class="main-toolbar" layout="column" style="height: 700px; bottom: 60px;">
             <md-toolbar class="navgi" ng-if="true">
                 <div class="md-toolbar-tools">
-                    <a href="#/"><span>Movie
-                    </span></a>
+                    <a href="#/">
+                        <span>Movie
+                        </span>
+                    </a>
 
                     <span flex="5"></span>
                     <md-button class="md-fab md-mini" aria-label="back" onClick="javascript:history.back()">
@@ -96,7 +99,7 @@
                                 </a>
                                 <a href="#" class="media list-group-item">
                                     <span class="media-body block m-b-none">
-                                        1.0  版本更新了<br>
+                                        1.0 版本更新了<br>
                                         <small class="text-muted">1 小时之前</small>
                                     </span>
                                 </a>
@@ -109,8 +112,12 @@
                             </div>
                         </section>
                     </section>
-                    <div class="avatar" ng-click="toggleRight()">
+                    <div class="avatar" ng-click="toggleRight()" ng-show="vm.login">
                         <img src="img/a0.png" alt="" style="border:0" onfocus="blur()"/>
+                    </div>
+                    <div class="register" ng-show="!vm.login">
+                        <a href="#/login">登陆/</a>
+                        <a href="#/register">注册</a>
                     </div>
                     <span flex="5"></span>
                     <md-button class="md-icon-button nav-button" aria-label="Samll" ng-click="smallWin()">
@@ -139,7 +146,7 @@
                     <div class="bg-info">
                         <img class="avatar center-avatar" src="img/a0.png" alt=""/>
                         <p style="text-align: center;">
-                            TopGrd
+                            {{user.name}}
                         </p>
                     </div>
                     <aside class="bg-black dk aside hidden-print" id="nav" style="height:100%;background:#232c32;">

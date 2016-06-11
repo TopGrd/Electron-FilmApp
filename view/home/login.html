@@ -1,40 +1,25 @@
-<div class="main-page allbg" ng-controller="LoginCtrl as lc" layout="row" layout-align="center start" layout-padding ng-cloak >
-    <md-content class="allbg" flex="70">
-    </br>
-    <br>
-    <br>
-        <md-input-container class="md-icon-float md-block">
-            <!-- Use floating label instead of placeholder -->
-            <label>账户名</label>
-            <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
-            <input ng-model="user.name" type="text">
-        </md-input-container>
-        <md-input-container md-no-float class="sex-switch md-block" layout="row" layout-align="start start">
-            <!-- Use floating label instead of placeholder -->
-            <span>男</span>
-            <md-switch ng-model="data.cb1" aria-label="Switch 1" style="display: inline-block;" flex="5">
-            </md-switch>
-            <span>女</span>
-        </md-input-container>
-        <md-input-container class="md-icon-float md-block">
-            <label>电话</label>
-            <md-icon md-svg-src="img/icons/phone.svg"></md-icon>
-            <input ng-model="user.phone" type="text">
-        </md-input-container>
-        <md-input-container class="md-icon-float md-block">
-            <label for="">邮箱</label>
-            <md-icon md-svg-src="img/icons/email.svg" class="email"></md-icon>
-            <input ng-model="user.email" type="email"  ng-required="true">
-        </md-input-container>
-        <md-input-container class="md-icon-float md-block">
-            <label>地址</label>
-            <md-icon md-svg-src="img/icons/adress.svg"></md-icon>
-            <input ng-model="user.address" type="text" >
-        </md-input-container>
-        <md-input-container class="md-icon-float md-block" layout="row" layout-align="center start" >
-            <md-button class="md-raised">提交</md-button>
-            <md-button class="md-raised md-warn">取消</md-button>
-        </md-input-container>
-
+<div class="main-page allbg" id="digbg" ng-controller="LoginCtrl as lc" layout="row" layout-align="center start" layout-padding ng-cloak>
+    <md-content class="allbg" flex="50" style="margin-top:100px;">
+        <br>
+        <br>
+        <br>
+        <form class="" method="post" ng-submit="login()">
+            <md-input-container class="md-icon-float md-block">
+                <!-- Use floating label instead of placeholder -->
+                <label>账户名</label>
+                <md-icon md-svg-src="img/icons/user.svg" class="name"></md-icon>
+                <input ng-model="user.name" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block">
+                <!-- Use floating label instead of placeholder -->
+                <label>密码</label>
+                <md-icon md-svg-src="img/icons/user.svg" class="password"></md-icon>
+                <input ng-model="user.password" type="password">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block" layout="row" layout-align="center start">
+                <md-button class="md-raised">登陆</md-button>
+                <md-button class="md-raised md-warn">取消</md-button>
+            </md-input-container>
+        </form>
     </md-content>
 </div>

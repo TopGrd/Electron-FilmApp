@@ -4,11 +4,11 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-06-05 18:34:04
+ * @Last modified time: 2016-06-12 00:19:48
  */
 
 angular.module('app')
-    .controller('DetailCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', '$routeParams', function(DataService, $scope, $q, $interval, $mdIcon, $routeParams) {
+    .controller('DetailCtrl', ['DataService', '$scope', '$q', '$interval', '$mdIcon', '$routeParams', '$location', '$anchorScroll', function(DataService, $scope, $q, $interval, $mdIcon, $routeParams, $location, $anchorScroll) {
         var self = this;
         self.activated = true;
         self.determinateValue = 30;
@@ -28,6 +28,12 @@ angular.module('app')
             }
         };
 
+        $scope.goComment = function() {
+            $location.hash('comment-form');
+
+            // 调用 $anchorScroll()
+            $anchorScroll();
+        }
 
         DataService.getHotMovies(options, true)
             .then(function(data) {

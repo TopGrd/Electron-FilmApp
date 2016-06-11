@@ -35,7 +35,8 @@ module.exports.routes = {
     '/': {
         view: 'homepage'
     },
-    'get /comeSoon': 'MovieController.create'
+    'get /comeSoon': 'MovieController.create',
+    'post /login': 'UserController.login'
 
     /***************************************************************************
      *                                                                          *

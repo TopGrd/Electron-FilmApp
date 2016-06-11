@@ -4,7 +4,7 @@
 * @Email:  topgrd@outlook.com
 * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-06-05 16:44:47
+ * @Last modified time: 2016-06-11 22:43:39
 */
 
 a img {
@@ -373,4 +373,7 @@ md-datepicker {
 }
 .sex-switch {
     line-height: 52px;
+}
+.register a {
+    font-size: 14px;
 }

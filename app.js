@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-06-05 17:55:38
+ * @Last modified time: 2016-06-11 23:09:03
  */
 
 var app = angular.module(
@@ -27,6 +27,12 @@ var app = angular.module(
                 '/login', {
                     templateUrl: './view/home/login.html',
                     controller: 'LoginCtrl'
+                }
+            );
+            $routeProvider.when(
+                '/register', {
+                    templateUrl: './view/home/register.html',
+                    controller: 'RegisterCtrl'
                 }
             );
             $routeProvider.when(
