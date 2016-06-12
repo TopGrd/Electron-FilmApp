@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-05-26 13:22:07
+ * @Last modified time: 2016-06-13 00:21:19
  */
 
 angular.module('app')
@@ -18,9 +18,6 @@ angular.module('app')
         }, {
             label: '北美票房榜',
             tpl: 'view/home/rank.html'
-        }, {
-            label: 'Top250',
-            tpl: ''
         }];
 
     }]);

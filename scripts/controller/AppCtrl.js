@@ -4,7 +4,7 @@
  * @Email:  topgrd@outlook.com
  * @Project: ES6
  * @Last modified by:   Li'Zhuo
- * @Last modified time: 2016-06-11 23:47:17
+ * @Last modified time: 2016-06-13 00:20:49
  */
 
 angular.module('app')
@@ -69,11 +69,11 @@ angular.module('app')
 
         $scope.toggleIt = function() {
             self.notify = !self.notify;
-        }
+        };
         $scope.logout = function() {
             $mdSidenav('left').toggle();
             self.login = false;
-        }
+        };
 
         $scope.formData = {};
 
